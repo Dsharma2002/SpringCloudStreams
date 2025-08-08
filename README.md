@@ -12,3 +12,7 @@ docker exec -it id /opt/kafka/bin/kafka-console-consumer.sh \
   --from-beginning \
   --bootstrap-server localhost:9092
 
+or alternatively Start the consumer application
+ConsumerApplication.java
+
+and test post request to http://localhost:8080/api/send?message=message on postman
