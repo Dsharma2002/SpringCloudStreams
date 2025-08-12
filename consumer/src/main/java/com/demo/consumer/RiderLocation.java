@@ -6,6 +6,9 @@ public class RiderLocation {
     private double latitude;
     private double longitude;
 
+    public RiderLocation() {
+    }
+
     public RiderLocation(String string, double d, double e) {
         this.riderId = string;
         this.latitude = d;
