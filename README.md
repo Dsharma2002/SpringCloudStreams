@@ -37,6 +37,7 @@ Example:
 interface Greeting {
     void sayHello(String name);
 }
+```
 
 ## Spring Cloud Function
 
@@ -59,3 +60,4 @@ You can bind the same function to:
 public Function<String, String> uppercase() {
     return value -> value.toUpperCase();
 }
+```
