@@ -61,3 +61,6 @@ public Function<String, String> uppercase() {
     return value -> value.toUpperCase();
 }
 ```
+
+## Spring Cloud Stream
+Spring Cloud Stream is a framework for messaging in Spring Boot that lets you write simple Java functions and connect them to messaging systems like Kafka or RabbitMQ without writing any broker-specific code.
