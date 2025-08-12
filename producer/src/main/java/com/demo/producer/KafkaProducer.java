@@ -10,16 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class KafkaProducer {
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, RiderLocation> kafkaTemplate;
 
-    public KafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
+    public KafkaProducer(KafkaTemplate<String, RiderLocation> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
     @PostMapping("/send")
     public String sendMessage(@RequestParam String message) {
-        this.kafkaTemplate.send("my-topic", message);
-        return "Message sent to Kafka: " + message;
+        RiderLocation riderLocation = new RiderLocation("rider#123", 12.97, 77.59);
+        kafkaTemplate.send("my-topic-new", riderLocation);
+        return "Message sent to Kafka: " + riderLocation.getRiderId();
     }
 
 }

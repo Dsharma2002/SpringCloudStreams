@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ConsumerApplication",
+            "request": "launch",
+            "mainClass": "com.demo.consumer.ConsumerApplication",
+            "projectName": "consumer"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProducerApplication<producer>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.demo.producer.ProducerApplication",
+            "projectName": "producer",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
