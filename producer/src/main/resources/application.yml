@@ -3,14 +3,19 @@ spring:
     name: producer
   cloud:
     function:
-      definition: sendRiderLocation
+      definition: sendRiderLocation;sendRiderStatus
     stream:
       function:
-        definition: sendRiderLocation
+        definition: sendRiderLocation;sendRiderStatus
       bindings:
         sendRiderLocation-out-0:
           destination: my-topic-new
           content-type: application/json
+        sendRiderStatus-out-0:
+          destination: my-topic-status
+          content-type: text/plain
+      poller:
+        fixed-delay: 1000
       kafka:
         binder:
           brokers: localhost:9092

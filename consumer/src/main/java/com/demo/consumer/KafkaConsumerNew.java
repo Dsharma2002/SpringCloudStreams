@@ -14,4 +14,11 @@ public class KafkaConsumerNew {
             System.out.println("Received rider location: " + location.getRiderId() + " at " + location.getLatitude() + ", " + location.getLongitude());
         };
     }
+
+    @Bean
+    public Consumer<String> processRiderStatus() {
+        return (status) -> {
+            System.out.println("Received rider status: " + status);
+        };
+    }
 }
